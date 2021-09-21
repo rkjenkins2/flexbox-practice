@@ -6,11 +6,36 @@
   
   .menu-container {
     color: #fff;
-    background-color: #5995DA;  /* Blue */
+    background-color: #5995DA; 
     padding: 20px 0;
+    /* the on-switch for flex */
+    display: flex;
+    /* always added to the PARENT element ... manipulating items through their parent element is common theme */
+    justify-content: center;
   }
   
   .menu {
     border: 1px solid #fff;  /* For debugging */
     width: 900px;
+    /* had to display flex even though menu is nested inside menu container; turns it into not just an item but a nested flex container */
+    /* flex containers only position elements one level deep */
+    display: flex;
+    justify-content: space-between;
   }
+
+  .date {
+    display: flex;
+    border: 2px solid purple;
+  }
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    border: 2px solid purple;
+    /* gap: 20px; */
+  }
+
+.login {
+  /* why did we do margin left rather than gap on links? */
+  margin-left: 20px;
+}
