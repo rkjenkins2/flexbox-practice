@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   
   .menu-container {
@@ -38,4 +39,89 @@
 .login {
   /* why did we do margin left rather than gap on links? */
   margin-left: 20px;
+}
+
+/* stuff below menu bar starts here */
+
+.header-container {
+  color: #5995DA;
+  background-color: #D6E9FE;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  border: 5px solid rgb(115, 228, 158);
+  /* because header has explicit height and width, we can position vert */
+  width: 900px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  /* stretch would make items stretch to 300px but content at top */
+  align-items: center;
+}
+
+.social,
+.logo,
+.subscribe {
+  border: 2px solid magenta;
+}
+
+.social, 
+.subscribe {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+/* stuff below is numbered boxes */
+
+.photo-grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-grid {
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* flex-direction very imp for mobile responsive */
+  /* row/column-reverse is purely presentational; html should make sense */
+  flex-direction: row;
+  align-items: center;
+}
+
+.photo-grid-item {
+  border: 1px solid #fff;
+  width: 300px;
+  height: 300px;
+}
+
+/* using order over reverse to swap out elements */
+.first-item {
+  order: 1;
+}
+
+.last-item {
+  order: -1;
+}
+
+/* stuff below is footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  border: 1px solid #fff;
+  background-color: #D6E9FE;
+  height: 200px;
+  /* flex distr extra space into items themselve
+  whereas justify-content distr space between them */
+  flex: 1;
+}
+
+.footer-three {
+  flex: 2;
 }
