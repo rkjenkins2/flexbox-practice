@@ -16,7 +16,7 @@
   }
   
   .menu {
-    border: 1px solid #fff;  /* For debugging */
+    /* border: 1px solid #fff;  For debugging */
     width: 900px;
     /* had to display flex even though menu is nested inside menu container; turns it into not just an item but a nested flex container */
     /* flex containers only position elements one level deep */
@@ -26,13 +26,14 @@
 
   .date {
     display: flex;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
   }
 
+  /* no longer needed due to auto margin */
   .links {
     display: flex;
     justify-content: flex-end;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     /* gap: 20px; */
   }
 
@@ -51,7 +52,7 @@
 }
 
 .header {
-  border: 5px solid rgb(115, 228, 158);
+  /* border: 5px solid rgb(115, 228, 158); */
   /* because header has explicit height and width, we can position vert */
   width: 900px;
   height: 300px;
@@ -64,13 +65,21 @@
 .social,
 .logo,
 .subscribe {
-  border: 2px solid magenta;
+  /* border: 2px solid magenta; */
 }
 
 .social, 
 .subscribe {
   align-self: flex-end;
   margin-bottom: 20px;
+}
+
+.signup {
+  /* auto-margins eat up ALL the extra space in a container;
+  instead of distr items equally, moves .signup and any following items
+  (.login) to the right side of the container... 
+  exact layout as earlier, but didn't need the extra nested links div */
+  margin-left: auto;
 }
 
 /* stuff below is numbered boxes */
@@ -122,6 +131,13 @@
   flex: 1;
 }
 
+.footer-one,
 .footer-three {
-  flex: 2;
+  background-color: #5995DA;
+  /* flex: initial falls back to the item's explicit width property
+  this allows to combine static and flex boxes;
+  makes this static;
+  this is a common layout to have fixed-width side bar and flex middle*/ 
+  flex: initial;
+  width: 300px;
 }
